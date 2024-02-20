@@ -1,0 +1,14 @@
+#  // Start containers in detached / background mode
+#    docker-compose up -d
+#
+#    // Stop containers
+#    docker-compose down
+version: "3"
+services:
+  db:
+    image:  postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: pass123
