@@ -1,7 +1,11 @@
 #  // Start containers in detached / background mode
 #    docker-compose up -d
 #
-#    // Stop containers
+#    // start/stop containers
+#    docker compose stop
+#    docker compose start
+#
+#    // Remove containers
 #    docker-compose down
 version: "3"
 services:
