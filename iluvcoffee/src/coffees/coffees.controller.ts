@@ -15,7 +15,9 @@ import {PaginationQueryDto} from "../common/dto/pagination-query.dto";
 import {REQUEST} from "@nestjs/core";
 import {Public} from "../common/decorators/public.decorator";
 import {Protocol} from "../common/decorators/protocol.decorator";
+import {ApiForbiddenResponse, ApiResponse, ApiTags} from "@nestjs/swagger";
 
+@ApiTags('coffees')
 // @UsePipes(ValidationPipe) // controller scoped pipe
 @Controller('coffees')
 export class CoffeesController {
@@ -25,6 +27,8 @@ export class CoffeesController {
     console.log("CoffeesService created" + request.url);
   }
 
+  // @ApiResponse({ status: 403, description: 'Forbidden.' })
+  @ApiForbiddenResponse({ description: 'Forbidden.' })
   @Public()
   @UsePipes(ValidationPipe) //method scoped pipe
   @Get()
