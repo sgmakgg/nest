@@ -19,7 +19,7 @@ export class CoffeesService {
         @InjectRepository(Flavor)
         private readonly flavorRepository: Repository<Flavor>,
         private readonly dataSource: DataSource,
-        @Inject(COFFEE_BRANDS) coffeeBrands: string[],
+        // @Inject(COFFEE_BRANDS) coffeeBrands: string[],
         // private readonly configService: ConfigService,
         @Inject(coffeesConfig.KEY)
         private coffeesConfiguration: ConfigType<typeof coffeesConfig>,
